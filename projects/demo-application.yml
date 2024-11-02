@@ -1,0 +1,12 @@
+project: default
+source:
+  repoURL: https://github.com/bellec1u/argocd-demo
+  path: resources
+  targetRevision: main
+destination:
+  server: https://kubernetes.default.svc
+  namespace: demo
+syncPolicy:
+  syncOptions:
+    - PruneLast=true
+    - CreateNamespace=true
