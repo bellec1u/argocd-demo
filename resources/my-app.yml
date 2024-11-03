@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: demo
+  labels:
+    k8s-app: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: my-app
+  template:
+    metadata:
+      name: my-app
+      labels:
+        k8s-app: my-app
+    spec:
+      containers:
+        - name: my-app
+          image: bedis9/colors:v2
+          env:
+            - name: COLOR
+              value: '#FF0000'
+          securityContext:
+            privileged: false
