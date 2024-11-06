@@ -21,6 +21,6 @@ spec:
           image: bedis9/colors:v2
           env:
             - name: COLOR
-              value: '#FF0000'
+              value: '#00FF00'
           securityContext:
             privileged: false
