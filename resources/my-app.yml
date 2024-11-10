@@ -21,6 +21,16 @@ spec:
           image: bedis9/colors:v2
           env:
             - name: COLOR
-              value: '#00FF00'
+              value: 'white'
           securityContext:
             privileged: false
+          readinessProbe:
+            tcpSocket:
+              port: 8888
+            initialDelaySeconds: 2
+            periodSeconds: 1
+          livenessProbe:
+            tcpSocket:
+              port: 8888
+            initialDelaySeconds: 2
+            periodSeconds: 1
